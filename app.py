@@ -36,6 +36,14 @@ from backend.utils import (
     format_pf_non_streaming_response,
 )
 
+# Application Insights
+from azure.monitor.opentelemetry import configure_azure_monitor
+from opentelemetry import trace
+
+configure_azure_monitor(enable_live_metrics = True)
+
+# Original code starts here
+
 bp = Blueprint("routes", __name__, static_folder="static", template_folder="static")
 
 cosmos_db_ready = asyncio.Event()
