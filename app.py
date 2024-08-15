@@ -40,7 +40,7 @@ from backend.utils import (
 from azure.monitor.opentelemetry import configure_azure_monitor
 from opentelemetry import trace
 
-configure_azure_monitor()
+configure_azure_monitor(enable_live_metrics = True)
 
 # Original code starts here
 
