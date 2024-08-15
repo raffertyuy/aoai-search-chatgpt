@@ -39,6 +39,7 @@ jobs:
         AZURE_SEARCH_SERVICE: ${{ vars.AZURESEARCHSERVICE }}
         AZURE_SEARCH_INDEX: ${{ vars.AZURESEARCHINDEX }}
         AZURE_SEARCH_QUERY: ${{ vars.AZURESEARCHQUERY }}
+        APPLICATIONINSIGHTS_CONNECTION_STRING: ${{ secrets.APPLICATIONINSIGHTSCONNECTIONSTRING }}
       run: |
         export PYTHONPATH=$(pwd)
         coverage run -m pytest -v --show-capture=stdout
