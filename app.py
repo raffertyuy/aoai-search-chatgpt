@@ -40,10 +40,12 @@ from backend.utils import (
 from azure.monitor.opentelemetry import configure_azure_monitor
 from opentelemetry import trace
 
-configure_azure_monitor(
-    connection_string = os.environ.get("APPLICATIONINSIGHTS_CONNECTION_STRING", ""),
-    enable_live_metrics = True
-)
+appinsights_conn_string = os.environ.get("APPLICATIONINSIGHTS_CONNECTION_STRING", "")
+if appinsights_conn_string:
+    configure_azure_monitor(
+        connection_string=appinsights_conn_string,
+        enable_live_metrics=True
+    )
 
 # Original code starts here
 
